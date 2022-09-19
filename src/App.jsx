@@ -13,6 +13,9 @@ import { Main } from "./Components/Partials/Main";
 import { SearchWrapper } from "./Components/StateManagement/SearchData";
 import { AuthWrapper } from "./Components/StateManagement/Authorize";
 
+//Import modular style sheet
+import Style from "./Assets/scss/App.module.scss";
+
 function App() {
   return (
     <section className={Style.body}>
