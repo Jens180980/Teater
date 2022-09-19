@@ -18,6 +18,7 @@ import { AuthWrapper } from "./Components/StateManagement/Authorize";
 import { EventListWrapper } from "./Components/StateManagement/EventListData";
 import { ActorListWrapper } from "./Components/StateManagement/ActorListData";
 import { CommentsListWrapper } from "./Components/StateManagement/CommentsListData";
+import { ShowLoginWrapper } from "./Components/StateManagement/ShowLoginData";
 
 function App() {
   return (
@@ -25,17 +26,19 @@ function App() {
       <BrowserRouter>
         <AuthWrapper>
           <SearchWrapper>
-            <Header />
-            <Main>
-              <CommentsListWrapper>
-                <ActorListWrapper>
-                  <EventListWrapper>
-                    <AllRoutes />
-                  </EventListWrapper>
-                </ActorListWrapper>
-              </CommentsListWrapper>
-            </Main>
-            <Footer />
+            <ShowLoginWrapper>
+              <Header />
+              <Main>
+                <CommentsListWrapper>
+                  <ActorListWrapper>
+                    <EventListWrapper>
+                      <AllRoutes />
+                    </EventListWrapper>
+                  </ActorListWrapper>
+                </CommentsListWrapper>
+              </Main>
+              <Footer />
+            </ShowLoginWrapper>
           </SearchWrapper>
         </AuthWrapper>
       </BrowserRouter>

@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 // Import subcomponents
 import { Navigation } from "../Partials/Navigation";
 import { SearchBar } from "./SearchBar";
-import { Login } from "./Login";
 
 // import modular style sheet
 import Style from "../../Assets/scss/Header.module.scss";
@@ -13,7 +12,9 @@ import Style from "../../Assets/scss/Header.module.scss";
 export const Header = () => {
   return (
     <header className={Style.header}>
-      <Login />
+      <h2>Logo</h2>
+      <p>Søgebar</p>
+      <Navigation />
     </header>
   );
 }; // End of function component

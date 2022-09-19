@@ -4,7 +4,7 @@ import { CommentsListContent } from "../StateManagement/CommentsListData";
 export const Test = () => {
   const { CommentsListData } = useContext(CommentsListContent);
 
-  console.log(CommentsListData);
+  // console.log(CommentsListData);
 
   return <div>Test</div>;
 };

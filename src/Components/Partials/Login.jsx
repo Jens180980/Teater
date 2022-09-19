@@ -33,11 +33,6 @@ export const Login = () => {
     }
   };
 
-  const logOut = () => {
-    sessionStorage.removeItem("token");
-    setLoginData("");
-  };
-
   return (
     <section className={Style.compWrapper}>
       {!loginData && !loginData.username ? (
@@ -66,12 +61,7 @@ export const Login = () => {
             <button>Login</button>
           </div>
         </form>
-      ) : (
-        <div>
-          <p>Du er logget ind som {loginData.username}</p>
-          <button onClick={logOut}>Log ud</button>
-        </div>
-      )}
+      ) : null}
     </section>
   );
 }; // End of function component
