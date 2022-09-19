@@ -1,4 +1,7 @@
+// Import React hooks
 import { Routes, Route } from "react-router-dom";
+
+// Import site pages
 import { Home } from "../Pages/Home";
 import { Events } from "../Pages/Events";
 import { EventDetails } from "../Pages/EventDetails";
@@ -7,6 +10,7 @@ import { SearchResult } from "../Pages/SearchResult";
 import { Actors } from "../Pages/Actors";
 import { Admin } from "../Pages/Admin";
 
+// AllRoutes function component
 export const AllRoutes = () => {
   return (
     <Routes>
@@ -21,4 +25,4 @@ export const AllRoutes = () => {
       <Route path="/admin" element={<Admin />}></Route>
     </Routes>
   );
-};
+}; // End of function component
