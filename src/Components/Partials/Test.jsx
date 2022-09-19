@@ -1,21 +1,10 @@
-import React from "react";
-import { useState, useEffect } from "react";
-import axios from "axios";
+import { useContext } from "react";
+import { CommentsListContent } from "../StateManagement/CommentsListData";
 
 export const Test = () => {
-  const [test, setTest] = useState();
-  useEffect(() => {
-    const getData = async () => {
-      const result = await axios.get(
-        `https://api.mediehuset.net/detutroligeteater/events`
-      );
+  const { CommentsListData } = useContext(CommentsListContent);
 
-      setTest(result.data.items);
-    };
-    getData();
-  }, []);
-
-  console.log(test);
+  console.log(CommentsListData);
 
   return <div>Test</div>;
 };

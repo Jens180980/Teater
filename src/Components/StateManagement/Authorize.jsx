@@ -1,10 +1,10 @@
 //Import react hooks
 import { createContext, useEffect, useState } from "react";
 
-// Create instance of content
+// Create instance of content for storing data
 const AuthContent = createContext();
 
-// Create wrapper for defining access to content
+// Create wrapper for defining access to data
 const AuthWrapper = ({ children }) => {
   // Define data
   const [loginData, setLoginData] = useState("");
@@ -16,7 +16,7 @@ const AuthWrapper = ({ children }) => {
     }
   }, [children]);
 
-  // Send data
+  // Send data to app
   return (
     <AuthContent.Provider value={{ loginData, setLoginData }}>
       {children}
@@ -24,7 +24,7 @@ const AuthWrapper = ({ children }) => {
   );
 };
 
-// Shortcut to sending standar header in http requests
+// Shortcut to sending standard header in http requests
 const authHeader = () => {
   const Token = sessionStorage.getItem("token")
     ? JSON.parse(sessionStorage.getItem("token"))

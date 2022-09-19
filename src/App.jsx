@@ -9,12 +9,15 @@ import { Footer } from "./Components/Partials/Footer";
 import { Header } from "./Components/Partials/Header";
 import { Main } from "./Components/Partials/Main";
 
+//Import modular style sheet
+import Style from "./Assets/scss/App.module.scss";
+
 //State management provider import
 import { SearchWrapper } from "./Components/StateManagement/SearchData";
 import { AuthWrapper } from "./Components/StateManagement/Authorize";
-
-//Import modular style sheet
-import Style from "./Assets/scss/App.module.scss";
+import { EventListWrapper } from "./Components/StateManagement/EventListData";
+import { ActorListWrapper } from "./Components/StateManagement/ActorListData";
+import { CommentsListWrapper } from "./Components/StateManagement/CommentsListData";
 
 function App() {
   return (
@@ -24,7 +27,13 @@ function App() {
           <SearchWrapper>
             <Header />
             <Main>
-              <AllRoutes />
+              <CommentsListWrapper>
+                <ActorListWrapper>
+                  <EventListWrapper>
+                    <AllRoutes />
+                  </EventListWrapper>
+                </ActorListWrapper>
+              </CommentsListWrapper>
             </Main>
             <Footer />
           </SearchWrapper>
