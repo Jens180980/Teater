@@ -34,7 +34,7 @@ export const Login = () => {
   };
 
   return (
-    <section className={Style.compWrapper}>
+    <section className={!loginData ? Style.compWrapper : Style.displayNone}>
       {!loginData && !loginData.username ? (
         <form onSubmit={handleSubmit(Login)}>
           <div className={Style.topWrap}>
@@ -60,6 +60,10 @@ export const Login = () => {
             </div>
 
             <button>Login</button>
+          </div>
+          <div className={Style.bottomInfo}>
+            <p>Glemt Adgangskode?</p>
+            <p>Opret ny bruger</p>
           </div>
         </form>
       ) : null}

@@ -35,4 +35,22 @@
       cursor: pointer;
     }
   }
+
+  .bottomInfo {
+    font-size: 0.7rem;
+    display: block;
+    margin-top: 0.5rem;
+
+    p {
+      display: inline;
+      margin-right: 0.5rem;
+      color: rgb(43, 43, 43);
+      border-bottom: 1px solid rgb(43, 43, 43);
+      cursor: pointer;
+    }
+  }
+}
+
+.displayNone {
+  display: none;
 }
