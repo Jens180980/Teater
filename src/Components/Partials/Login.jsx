@@ -37,7 +37,7 @@ export const Login = () => {
     <section className={Style.compWrapper}>
       {!loginData && !loginData.username ? (
         <form onSubmit={handleSubmit(Login)}>
-          <div>
+          <div className={Style.topWrap}>
             <input
               type="text"
               id="username"
@@ -47,17 +47,18 @@ export const Login = () => {
 
             {errors.username && <span>Udfyld venligst feltet korrekt</span>}
           </div>
-          <div>
-            <input
-              type="password"
-              id="password"
-              placeholder="Indtast adgangskode"
-              {...register("password", { required: true })}
-            />
+          <div className={Style.bottomWrap}>
+            <div>
+              <input
+                type="password"
+                id="password"
+                placeholder="Indtast adgangskode"
+                {...register("password", { required: true })}
+              />
 
-            {errors.password && <span>Udfyld venligst feltet korrekt</span>}
-          </div>
-          <div>
+              {errors.password && <span>Udfyld venligst feltet korrekt</span>}
+            </div>
+
             <button>Login</button>
           </div>
         </form>

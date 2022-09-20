@@ -1,0 +1,21 @@
+.form {
+  input {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-bottom: 1px solid black;
+  }
+
+  ::placeholder {
+    font-family: "Titillium Web", sans-serif;
+    text-transform: uppercase;
+  }
+
+  button {
+    height: 100%;
+    outline: none;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid black;
+    cursor: pointer;
+  }
+}
