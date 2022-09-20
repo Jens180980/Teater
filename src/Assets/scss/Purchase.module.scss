@@ -1,0 +1,22 @@
+.button {
+  display: flex;
+  justify-content: flex-end;
+  margin: 1rem 0;
+
+  button {
+    outline: none;
+    border: none;
+    padding: 0.5rem 1rem;
+    text-transform: uppercase;
+    background-color: #ad7a51;
+    color: white;
+    font-weight: 700;
+    font-size: 1.2rem;
+    transition: all 200ms linear;
+    cursor: pointer;
+  }
+
+  button:hover {
+    color: rgb(229, 228, 228);
+  }
+}

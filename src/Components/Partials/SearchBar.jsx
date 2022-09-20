@@ -3,6 +3,9 @@ import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 
+//import from npm dependencies
+import { AiOutlineSearch } from "react-icons/ai";
+
 //import data from content provider
 import { SearchContent } from "../StateManagement/SearchData";
 
@@ -27,7 +30,9 @@ export const SearchBar = () => {
         {...register("SearchItem", { required: true })}
         placeholder="Indtast søgeord"
       />
-      <button>&#x1F50E;</button>
+      <button>
+        <AiOutlineSearch />
+      </button>
     </form>
   );
 };

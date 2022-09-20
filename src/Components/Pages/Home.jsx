@@ -1,10 +1,17 @@
 import React from "react";
-import { Test } from "../Partials/Test";
+import { Hero } from "../Partials/Hero";
+import { FrontGallery } from "../Partials/FrontGallery";
+import { NavLink } from "react-router-dom";
+import Style from "../../Assets/scss/Home.module.scss";
 
 export const Home = () => {
   return (
     <div>
-      <Test />
+      <Hero />
+      <FrontGallery />
+      <div className={Style.link}>
+        <NavLink to="/events">Se alle forestillinger</NavLink>
+      </div>
     </div>
   );
 };

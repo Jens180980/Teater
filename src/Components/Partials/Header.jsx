@@ -1,5 +1,5 @@
 // Import react hooks
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 // Import subcomponents
 import { Navigation } from "../Partials/Navigation";
@@ -13,7 +13,10 @@ import logo from "../../Assets/img/DUT_logo.png";
 export const Header = () => {
   return (
     <header className={Style.header}>
-      <img src={logo} alt="logo" />
+      <NavLink to="./">
+        <img src={logo} alt="logo" />
+      </NavLink>
+
       <div>
         <SearchBar />
         <Navigation />
