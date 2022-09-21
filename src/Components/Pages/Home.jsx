@@ -7,7 +7,7 @@ import Style from "../../Assets/scss/Home.module.scss";
 export const Home = () => {
   return (
     <div>
-      <Hero />
+      {/* <Hero /> */}
       <FrontGallery />
       <div className={Style.link}>
         <NavLink to="/events">Se alle forestillinger</NavLink>

@@ -19,6 +19,7 @@ import { EventListWrapper } from "./Components/StateManagement/EventListData";
 import { ActorListWrapper } from "./Components/StateManagement/ActorListData";
 import { CommentsListWrapper } from "./Components/StateManagement/CommentsListData";
 import { ShowLoginWrapper } from "./Components/StateManagement/ShowLoginData";
+import { ReservationSeatWrapper } from "./Components/StateManagement/ReservationSeatData";
 
 function App() {
   return (
@@ -29,13 +30,15 @@ function App() {
             <ShowLoginWrapper>
               <Header />
               <Main>
-                <CommentsListWrapper>
-                  <ActorListWrapper>
-                    <EventListWrapper>
-                      <AllRoutes />
-                    </EventListWrapper>
-                  </ActorListWrapper>
-                </CommentsListWrapper>
+                <ReservationSeatWrapper>
+                  <CommentsListWrapper>
+                    <ActorListWrapper>
+                      <EventListWrapper>
+                        <AllRoutes />
+                      </EventListWrapper>
+                    </ActorListWrapper>
+                  </CommentsListWrapper>
+                </ReservationSeatWrapper>
               </Main>
               <Footer />
             </ShowLoginWrapper>

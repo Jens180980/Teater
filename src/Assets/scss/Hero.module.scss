@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap");
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  height: 50vh;
+  overflow: hidden;
+  text-align: right;
+  gap: 1rem;
+  color: gray;
+  border: 1px solid #ad7a51;
+
+  h2 {
+    font-family: "Playfair Display", serif;
+    color: #ad7a51;
+  }
+
+  .leftTop {
+    border-bottom: 1px solid lightgray;
+    margin-top: 3rem;
+  }
+  .leftBottom {
+    margin-top: 2rem;
+  }
+
+  .image {
+    border: 4px solid #ad7a51;
+  }
+}
