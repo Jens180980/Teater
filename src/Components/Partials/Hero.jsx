@@ -9,24 +9,32 @@ import Style from "../../Assets/scss/Hero.module.scss";
 
 export const Hero = () => {
   const { EventListData } = useContext(EventListContent);
-  // console.log(EventListData);
+  const limitedEvents = EventListData.splice(0, 1);
+
   return (
-    <section className={Style.wrapper}>
-      <div className={Style.left}>
-        <div className={Style.leftTop}>
-          <h4>{EventListData[0].stage_name}</h4>
-          <p>
-            {EventListData[0].startdate} - {EventListData[0].stopdate}
-          </p>
-        </div>
-        <div className={Style.leftBottom}>
-          <h2>{EventListData[0].title}</h2>
-          <h3>{EventListData[0].genre}</h3>
-        </div>
-      </div>
-      <div className={Style.image}>
-        <img src={EventListData[0].image_medium} alt="forestilling"></img>
-      </div>
+    <section>
+      {limitedEvents &&
+        limitedEvents.map((item) => {
+          return (
+            <section className={Style.wrapper} key={item.id}>
+              <div className={Style.left}>
+                <div className={Style.leftTop}>
+                  <h4>{item.stage_name}</h4>
+                  <p>
+                    {item.startdate} - {item.stopdate}
+                  </p>
+                </div>
+                <div className={Style.leftBottom}>
+                  <h2>{item.title}</h2>
+                  <h3>{item.genre}</h3>
+                </div>
+              </div>
+              {/* <div className={Style.image}> */}
+              <img src={item.image_medium} alt="forestilling"></img>
+              {/* </div> */}
+            </section>
+          );
+        })}
     </section>
   );
 };

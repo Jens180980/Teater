@@ -40,7 +40,8 @@
     .right {
       margin-left: 4rem;
 
-      button {
+      button,
+      a {
         border: none;
         padding: 0.5rem 1rem;
         background-color: #ad7a51;
@@ -52,8 +53,9 @@
         margin-right: 0.5rem;
         cursor: pointer;
       }
-      button:nth-of-type(1) {
+      a {
         background-color: #30454c;
+        text-decoration: none;
       }
     }
   } // end itemwrap

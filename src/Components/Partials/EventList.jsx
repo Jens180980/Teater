@@ -1,5 +1,6 @@
 // import react hooks
 import { useContext } from "react";
+import { NavLink } from "react-router-dom";
 
 // import data from provider
 import { EventListContent } from "../StateManagement/EventListData";
@@ -27,7 +28,7 @@ export const EventList = () => {
                 </h4>
               </div>
               <div className={Style.right}>
-                <button>LÆS MERE</button>
+                <NavLink to={`/events/${item.id}`}>LÆS MERE</NavLink>
                 <button>KØB BILLET</button>
               </div>
             </section>
