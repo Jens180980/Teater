@@ -57,7 +57,7 @@ export const EventDetails = () => {
               <section className={Style.actorGallery}>
                 {EventDetails.actors.map((item) => {
                   return (
-                    <figure>
+                    <figure key={item.id}>
                       <div className={Style.imgWrap}>
                         <img src={item.image}></img>
                       </div>
@@ -70,7 +70,7 @@ export const EventDetails = () => {
               </section>
             </div>
             <hr></hr>
-            <ShowComments />
+            <ShowComments event_id={event_id} />
           </div>
         ) : null}
       </section>
