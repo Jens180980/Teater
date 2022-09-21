@@ -7,9 +7,16 @@ import { EventListContent } from "../StateManagement/EventListData";
 
 // import modular style sheet
 import Style from "../../Assets/scss/FrontGallery.module.scss";
+import { PickedEventContent } from "../StateManagement/PickedEventData";
 
 export const FrontGallery = () => {
   const { EventListData } = useContext(EventListContent);
+  const { setPickedEventData } = useContext(PickedEventContent);
+
+  const setEvent_id = () => {
+    console.log(EventListData);
+    setPickedEventData(EventListData.id);
+  };
 
   return (
     <section className={Style.wrapper}>
@@ -28,7 +35,9 @@ export const FrontGallery = () => {
               </article>
               <div className={Style.btnWrap}>
                 <NavLink to={`/events/${item.id}`}>LÆS MERE</NavLink>
-                <button>KØB BILLET</button>
+                <NavLink to="/purchase" onClick={setEvent_id}>
+                  KØB BILLET
+                </NavLink>
               </div>
             </div>
           );

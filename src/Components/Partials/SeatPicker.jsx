@@ -15,11 +15,9 @@ export const SeatPicker = ({ event_id }) => {
     };
     getData();
   }, [event_id]);
-  console.log(SeatData);
 
   return (
     <section className={Style.SeatPickerWrapper}>
-      <p>{event_id}</p>
       <div className={Style.line}>
         {SeatData &&
           SeatData.map((item) => {
