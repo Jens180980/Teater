@@ -1,0 +1,30 @@
+.wrapper {
+  padding: 1rem;
+  h2 {
+    text-transform: uppercase;
+    border-bottom: 1px solid lightgray;
+    margin: 2rem 0;
+  }
+
+  h3 {
+    font-size: 1rem;
+  }
+
+  h4 {
+    font-weight: 400;
+    font-size: 0.8rem;
+  }
+
+  .itemWrapper {
+    border-bottom: 1px solid lightgray;
+    padding: 2rem 0;
+
+    svg {
+      color: #ad7a51;
+    }
+
+    p {
+      color: #ad7a51;
+    }
+  }
+}

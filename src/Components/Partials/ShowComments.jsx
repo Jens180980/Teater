@@ -2,6 +2,10 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
+// import modular style sheet and icons
+import { AiOutlineStar, AiFillStar } from "react-icons/ai";
+import Style from "../../Assets/scss/ShowComments.module.scss";
+
 export const ShowComments = ({ event_id }) => {
   const [Comments, setComments] = useState();
 
@@ -19,20 +23,37 @@ export const ShowComments = ({ event_id }) => {
   console.log(Comments);
 
   return (
-    <div>
+    <section className={Style.wrapper}>
       <h2>Anmeldelser</h2>
       {Comments &&
         Comments.map((item) => {
+          // preparing rating stars
+          const filledStars = item.num_stars;
+          const remainingStars = 5 - filledStars;
+          const filledStarsArr = [];
+          const remainingStarsArr = [];
+
+          for (let i = 0; i < remainingStars; i++) {
+            remainingStarsArr.push(<AiOutlineStar key={i} />);
+          }
+          for (let i = 0; i < filledStars; i++) {
+            filledStarsArr.push(<AiFillStar key={i + 100} />);
+          }
+
           return (
-            <section>
-              <p>{item.created}</p>
-              <h4>
+            <section className={Style.itemWrapper}>
+              <div>
+                {filledStarsArr}
+                {remainingStarsArr}
+              </div>
+              <h4>{item.created}</h4>
+              <h3>
                 {item.user.firstname} {item.user.lastname}
-              </h4>
+              </h3>
               <p>{item.comment}</p>
             </section>
           );
         })}
-    </div>
+    </section>
   );
 };
