@@ -1,17 +1,27 @@
 // import react hooks
 import { useForm } from "react-hook-form";
 import axios from "axios";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 
 // import data from provider
 import { authHeader, AuthContent } from "../StateManagement/Authorize";
-import { ReservationSeatContent } from "../StateManagement/ReservationSeatData";
-import { EventListContent } from "../StateManagement/EventListData";
 
 // import modular style sheet
 import Style from "../../Assets/scss/BuyerInfo.module.scss";
 
 export const BuyerInfo = ({ event_id }) => {
+  const [EventData, setEventData] = useState([]);
+  useEffect(() => {
+    const getData = async () => {
+      const result = await axios.get(
+        `https://api.mediehuset.net/detutroligeteater/events/${event_id}`
+      );
+
+      setEventData(result.data.item);
+    };
+    getData();
+  }, [event_id]);
+
   const {
     register,
     handleSubmit,
@@ -19,17 +29,15 @@ export const BuyerInfo = ({ event_id }) => {
   } = useForm();
 
   const { loginData } = useContext(AuthContent);
-  const { EventListData } = useContext(EventListContent);
-  const { ReservationData } = useContext(ReservationSeatContent);
 
-  const Login = async (data) => {
+  const SubmitBuy = async (data) => {
     const formData = new FormData();
     formData.append("firstname", data.firstname);
     formData.append("lastname", data.lastname);
     formData.append("address", data.address);
     formData.append("zipcode", data.zipcode);
     formData.append("email", data.email);
-    formData.append("seats[]", ReservationData);
+    formData.append("seats[]", data.value);
 
     const result = await axios.post(
       "https://api.mediehuset.net/detutroligeteater/reservations",
@@ -41,17 +49,15 @@ export const BuyerInfo = ({ event_id }) => {
 
   return (
     <section className={Style.outerWrap}>
-      <div>
-        {EventListData ? (
-          <img
-            src={EventListData[event_id].image_medium}
-            alt="forestillinger"
-          ></img>
+      <div className={Style.imgWrap}>
+        {EventData ? (
+          <img src={EventData.image_small} alt="forestillinger"></img>
         ) : null}
       </div>
       <section className={!loginData ? Style.compWrapper : Style.displayNone}>
         {loginData && loginData.username ? (
-          <form onSubmit={handleSubmit(Login)}>
+          <form onSubmit={handleSubmit(SubmitBuy)}>
+            <h2>Køb billet</h2>
             <div className={Style.inputField}>
               <input
                 type="text"
@@ -93,9 +99,11 @@ export const BuyerInfo = ({ event_id }) => {
               {errors.zipcode && <span>Udfyld venligst feltet korrekt</span>}
             </div>
 
-            <button>Login</button>
+            <button>Send bestilling</button>
           </form>
-        ) : null}
+        ) : (
+          <p>Du skal være logget ind for at bestille</p>
+        )}
       </section>
     </section>
   );
