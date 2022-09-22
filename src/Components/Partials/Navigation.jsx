@@ -4,6 +4,8 @@ import Style from "../../Assets/scss/Navigation.module.scss";
 import { AuthContent } from "../StateManagement/Authorize";
 import { Login } from "./Login";
 import { ShowLoginContent } from "../StateManagement/ShowLoginData";
+import { slide as Menu } from "react-burger-menu";
+import "../../Assets/scss/burger.scss";
 
 export const Navigation = () => {
   const { loginData } = useContext(AuthContent);
@@ -35,6 +37,24 @@ export const Navigation = () => {
         </li>
         {ShowLogin ? <Login className={Style.loginForm} /> : null}
       </ul>
+    </nav>
+  );
+};
+
+export const BurgerNav = () => {
+  return (
+    <nav className={Style.burgerNav}>
+      <Menu right>
+        <NavLink id="home" className="menu-item" to="/">
+          Forside
+        </NavLink>
+        <NavLink id="list" className="menu-item" to="/events">
+          Forestillinger
+        </NavLink>
+        <NavLink id="login" className="menu-item" to="/actors">
+          Skuespillere
+        </NavLink>
+      </Menu>
     </nav>
   );
 };

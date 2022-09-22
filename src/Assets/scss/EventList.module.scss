@@ -42,6 +42,7 @@
 
       button,
       a {
+        display: inline-block;
         border: none;
         padding: 0.5rem 1rem;
         background-color: #ad7a51;
@@ -52,6 +53,50 @@
         transition: all 200ms linear;
         margin-right: 0.5rem;
         cursor: pointer;
+      }
+      a {
+        background-color: #30454c;
+        text-decoration: none;
+      }
+    }
+  } // end itemwrap
+}
+
+@media only screen and (max-width: 500px) {
+  .itemWrapper {
+    display: block !important;
+
+    .image {
+      height: 15vh;
+      width: 100% !important;
+      overflow: hidden;
+      margin: 1rem;
+
+      img {
+        display: block;
+        height: 15vh;
+      }
+    }
+
+    h3 {
+      width: auto !important;
+      margin: 0 1rem;
+      border-right: none !important;
+    }
+
+    .middle {
+      p,
+      h4 {
+        margin: 0 1rem;
+      }
+    }
+
+    .right {
+      margin-left: 4rem;
+
+      button,
+      a {
+        margin: 1rem 0;
       }
       a {
         background-color: #30454c;

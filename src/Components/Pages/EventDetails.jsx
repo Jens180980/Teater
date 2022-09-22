@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import { NavLink } from "react-router-dom";
 
 // import subcomponents
 import { ShowComments } from "../Partials/ShowComments";
@@ -48,7 +49,7 @@ export const EventDetails = () => {
               <article>
                 <div>
                   <h2>{EventDetails.title}</h2>
-                  <button>KØB BILLET</button>
+                  <NavLink to={`/purchase/${event_id}`}>KØB BILLET</NavLink>
                 </div>
                 <h4>{EventDetails.genre}</h4>
                 <p>{EventDetails.description}</p>

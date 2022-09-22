@@ -19,6 +19,8 @@
     img {
       overflow: hidden !important;
       border: 3px solid #ad7a51;
+      display: block;
+      width: 100%;
     }
 
     article {
@@ -59,4 +61,10 @@
       }
     }
   } // end itemwrap
+}
+
+@media only screen and (max-width: 500px) {
+  .wrapper {
+    display: block;
+  }
 }

@@ -2,7 +2,7 @@
 import { NavLink } from "react-router-dom";
 
 // Import subcomponents
-import { Navigation } from "../Partials/Navigation";
+import { Navigation, BurgerNav } from "../Partials/Navigation";
 import { SearchBar } from "./SearchBar";
 
 // import modular style sheet & images
@@ -20,6 +20,9 @@ export const Header = () => {
       <div>
         <SearchBar />
         <Navigation />
+      </div>
+      <div>
+        <BurgerNav />
       </div>
     </header>
   );

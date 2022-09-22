@@ -35,3 +35,15 @@
     }
   }
 }
+.burgerNav {
+  display: none !important;
+}
+
+@media only screen and (max-width: 500px) {
+  .nav {
+    display: none;
+  }
+  .burgerNav {
+    display: block !important;
+  }
+}
