@@ -24,7 +24,7 @@ export const EventList = () => {
               <div className={Style.middle}>
                 <p>{item.stage_name}</p>
                 <h4>
-                  {EventListData[0].startdate} - {EventListData[0].stopdate}
+                  {item.startdate} - {item.stopdate}
                 </h4>
               </div>
               <div className={Style.right}>

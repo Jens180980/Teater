@@ -9,8 +9,7 @@ const EventListContent = createContext();
 
 // Creating wrapper to define access to content
 const EventListWrapper = ({ children }) => {
-  const [EventListData, setEventListData] = useState([]);
-
+  const [EventListData, setEventListData] = useState();
   // Get data
   useEffect(() => {
     const getData = async () => {
@@ -22,7 +21,6 @@ const EventListWrapper = ({ children }) => {
     };
     getData();
   }, []);
-
   // Send data to app
   return (
     <EventListContent.Provider value={{ EventListData }}>

@@ -1,5 +1,6 @@
 // import react hooks
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
+import axios from "axios";
 
 // import data from provider
 import { EventListContent } from "../StateManagement/EventListData";
@@ -8,13 +9,12 @@ import { EventListContent } from "../StateManagement/EventListData";
 import Style from "../../Assets/scss/Hero.module.scss";
 
 export const Hero = () => {
-  const { EventListData } = useContext(EventListContent);
-  const limitedEvents = EventListData.splice(0, 1);
+  const { EventListData, setEventListData } = useContext(EventListContent);
 
   return (
     <section>
-      {limitedEvents &&
-        limitedEvents.map((item) => {
+      {EventListData &&
+        EventListData.splice(0, 1).map((item) => {
           return (
             <section className={Style.wrapper} key={item.id}>
               <div className={Style.left}>

@@ -2,6 +2,9 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
+// Import subcomponents
+import { MakeComment } from "./MakeComment";
+
 // import modular style sheet and icons
 import { AiOutlineStar, AiFillStar } from "react-icons/ai";
 import Style from "../../Assets/scss/ShowComments.module.scss";
@@ -19,8 +22,6 @@ export const ShowComments = ({ event_id }) => {
     };
     getData();
   }, [event_id]);
-
-  console.log(Comments);
 
   return (
     <section className={Style.wrapper}>
@@ -41,7 +42,7 @@ export const ShowComments = ({ event_id }) => {
           }
 
           return (
-            <section className={Style.itemWrapper}>
+            <section className={Style.itemWrapper} key={item.id}>
               <div>
                 {filledStarsArr}
                 {remainingStarsArr}
@@ -54,6 +55,7 @@ export const ShowComments = ({ event_id }) => {
             </section>
           );
         })}
+      <MakeComment event_id={event_id} />
     </section>
   );
 };

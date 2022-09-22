@@ -10,8 +10,7 @@ import { ShowLoginContent } from "../StateManagement/ShowLoginData";
 import Style from "../../Assets/scss/Admin.module.scss";
 
 // import subcomponents
-import { MyFavorites } from "../Partials/MyFavorites";
-import { MyReservations } from "../Partials/MyReservations";
+import { MyComments } from "../Partials/MyComments";
 
 // Admin function component
 export const Admin = () => {
@@ -33,8 +32,7 @@ export const Admin = () => {
           <button onClick={logOut}>Log ud</button>
         </div>
       </div>
-      <MyReservations />
-      <MyFavorites />
+      <MyComments />
     </section>
   );
 }; // end function component
