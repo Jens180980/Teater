@@ -29,7 +29,7 @@ export const EventList = () => {
               </div>
               <div className={Style.right}>
                 <NavLink to={`/events/${item.id}`}>LÆS MERE</NavLink>
-                <button>KØB BILLET</button>
+                <NavLink to={`/purchase/${item.id}`}>KØB BILLET</NavLink>
               </div>
             </section>
           );

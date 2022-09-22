@@ -1,0 +1,26 @@
+.wrapper {
+  margin: 10rem 5rem;
+  padding-bottom: 15rem;
+
+  h2 {
+    text-align: left;
+    margin-bottom: 2rem;
+  }
+
+  table {
+    text-align: left;
+
+    td,
+    th {
+      border-bottom: 1px solid black;
+      width: 15vw;
+      padding: 1rem 0;
+      color: black;
+    }
+
+    th {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+  }
+}
