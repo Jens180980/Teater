@@ -1,3 +1,4 @@
+// Actually not being used. Left as an example.
 // Import react hooks
 import { useState, useEffect, createContext } from "react";
 

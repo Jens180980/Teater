@@ -6,6 +6,7 @@ import axios from "axios";
 // import modular style sheet
 import Style from "../../Assets/scss/EventList.module.scss";
 
+// EventList function component
 export const EventList = () => {
   const [EventListData, setEventListData] = useState([]);
 

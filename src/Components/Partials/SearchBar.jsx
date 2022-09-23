@@ -12,6 +12,7 @@ import { SearchContent } from "../StateManagement/SearchData";
 //import modular style sheets
 import Style from "../../Assets/scss/SearchBar.module.scss";
 
+// SearchBar function component
 export const SearchBar = () => {
   const navigate = useNavigate();
   const { setSearchData } = useContext(SearchContent);

@@ -6,6 +6,7 @@ import axios from "axios";
 // import modular style sheet
 import Style from "../../Assets/scss/FrontGallery.module.scss";
 
+// FrontGallery function component
 export const FrontGallery = () => {
   const [EventListData, setEventListData] = useState([]);
 

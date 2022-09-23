@@ -1,9 +1,15 @@
+// import react hooks
 import { useState, useContext, useEffect } from "react";
 import axios from "axios";
-import { SearchContent } from "../StateManagement/SearchData";
-import Style from "../../Assets/scss/SearchResult.module.scss";
 import { Link } from "react-router-dom";
 
+// import data from provider
+import { SearchContent } from "../StateManagement/SearchData";
+
+// import modular style sheet
+import Style from "../../Assets/scss/SearchResult.module.scss";
+
+// Searchresult function component
 export const SearchResult = () => {
   const { searchData } = useContext(SearchContent);
   const [searchResult, setSearchResult] = useState([]);

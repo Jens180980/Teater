@@ -9,6 +9,7 @@ import { authHeader, AuthContent } from "../StateManagement/Authorize";
 // import modular style sheet
 import Style from "../../Assets/scss/BuyerInfo.module.scss";
 
+// BuyerInfo function component
 export const BuyerInfo = ({ event_id }) => {
   const [EventData, setEventData] = useState([]);
   useEffect(() => {
@@ -49,6 +50,7 @@ export const BuyerInfo = ({ event_id }) => {
     formData.append("address", data.address);
     formData.append("zipcode", data.zipcode);
     formData.append("email", data.email);
+    //appending each seat
     data.seats &&
       data.seats.map((item) => {
         formData.append("seats[]", item);
@@ -59,8 +61,6 @@ export const BuyerInfo = ({ event_id }) => {
       formData,
       { headers: authHeader() }
     );
-    console.log(result);
-    console.log(data.seats);
   };
 
   return (
@@ -129,6 +129,7 @@ export const BuyerInfo = ({ event_id }) => {
 
             <section className={Style.SeatPickerWrapper}>
               <div className={Style.stage}>Scenen</div>
+              {/* The div under this comment wraps all cases row === 1 for styling purposes*/}
               <div className={Style.line}>
                 {SeatData &&
                   SeatData.map((item) => {

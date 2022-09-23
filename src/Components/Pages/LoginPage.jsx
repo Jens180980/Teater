@@ -18,6 +18,7 @@ export const LoginPage = () => {
     formState: { errors },
   } = useForm();
 
+  //Logindata now avaible to set and read
   const { loginData, setLoginData } = useContext(AuthContent);
 
   const Login = async (data) => {
@@ -33,10 +34,12 @@ export const LoginPage = () => {
       setLoginData(result.data);
     }
   };
+
   const navigate = useNavigate();
   const logOut = () => {
     sessionStorage.removeItem("token");
     setLoginData("");
+    // Navigates to home page after logout
     navigate("/", { replace: true });
   };
 

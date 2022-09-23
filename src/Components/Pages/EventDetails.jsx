@@ -10,6 +10,7 @@ import { ShowComments } from "../Partials/ShowComments";
 // import modular style sheet
 import Style from "../../Assets/scss/EventDetail.module.scss";
 
+// EventDetails function component
 export const EventDetails = () => {
   const { event_id } = useParams(0);
   const [EventDetails, setEventDetails] = useState();

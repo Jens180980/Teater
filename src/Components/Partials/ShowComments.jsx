@@ -9,6 +9,7 @@ import { MakeComment } from "./MakeComment";
 import { AiOutlineStar, AiFillStar } from "react-icons/ai";
 import Style from "../../Assets/scss/ShowComments.module.scss";
 
+// ShowComments function component
 export const ShowComments = ({ event_id }) => {
   const [Comments, setComments] = useState();
 
@@ -34,6 +35,7 @@ export const ShowComments = ({ event_id }) => {
           const filledStarsArr = [];
           const remainingStarsArr = [];
 
+          // Filling arrays with correct number of icon components
           for (let i = 0; i < remainingStars; i++) {
             remainingStarsArr.push(<AiOutlineStar key={i} />);
           }
@@ -44,6 +46,7 @@ export const ShowComments = ({ event_id }) => {
           return (
             <section className={Style.itemWrapper} key={item.id}>
               <div>
+                {/* outputting correct number of icon components */}
                 {filledStarsArr}
                 {remainingStarsArr}
               </div>

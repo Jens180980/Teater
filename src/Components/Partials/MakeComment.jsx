@@ -10,7 +10,7 @@ import { AuthContent, authHeader } from "../StateManagement/Authorize";
 // Import modular style sheets
 import Style from "../../Assets/scss/MakeComment.module.scss";
 
-// Login function component
+// MakeComment function component
 export const MakeComment = ({ event_id }) => {
   const {
     register,

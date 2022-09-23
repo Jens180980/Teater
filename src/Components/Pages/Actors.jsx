@@ -5,6 +5,7 @@ import axios from "axios";
 // import modular style sheet
 import Style from "../../Assets/scss/Actors.module.scss";
 
+// Actors function component
 export const Actors = () => {
   const [ActorData, setActorData] = useState([]);
 

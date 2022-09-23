@@ -5,6 +5,7 @@ import axios from "axios";
 // import modular style sheet
 import Style from "../../Assets/scss/Hero.module.scss";
 
+// Hero function component
 export const Hero = () => {
   const [EventListData, setEventListData] = useState([]);
 
@@ -38,9 +39,7 @@ export const Hero = () => {
                   <h3>{item.genre}</h3>
                 </div>
               </div>
-              {/* <div className={Style.image}> */}
               <img src={item.image_medium} alt="forestilling"></img>
-              {/* </div> */}
             </section>
           );
         })}

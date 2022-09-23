@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 // Import subcomponents
 import { BuyerInfo } from "../Partials/BuyerInfo";
 
+// PurchaseDetails function component is the one being used
 export const PurchaseDetails = () => {
   const { event_id } = useParams(0);
   return (
@@ -15,11 +16,7 @@ export const PurchaseDetails = () => {
   );
 };
 
+// Will only be called if you remove event_id from url
 export const Purchase = () => {
-  const { event_id } = useParams(0);
-  return (
-    <div>
-      <BuyerInfo event_id={event_id} />
-    </div>
-  );
+  return <div>Du har ikke valgt en forestilling</div>;
 };

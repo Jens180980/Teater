@@ -2,7 +2,6 @@
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
 
 //Import UseContext data
 import { AuthContent } from "../StateManagement/Authorize";
@@ -33,7 +32,6 @@ export const Login = () => {
       setLoginData(result.data);
     }
   };
-  const navigate = useNavigate();
 
   return (
     <section className={!loginData ? Style.compWrapper : Style.displayNone}>

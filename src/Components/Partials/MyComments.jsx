@@ -9,6 +9,7 @@ import { AuthContent, authHeader } from "../StateManagement/Authorize";
 // Import modular style sheet
 import Style from "../../Assets/scss/MyComments.module.scss";
 
+// MyComments function component
 export const MyComments = () => {
   const { loginData } = useContext(AuthContent);
   const [AllComments, setAllComments] = useState();

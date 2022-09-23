@@ -1,12 +1,20 @@
+// import react hooks
 import { useContext } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import Style from "../../Assets/scss/Navigation.module.scss";
-import { AuthContent } from "../StateManagement/Authorize";
-import { Login } from "./Login";
-import { ShowLoginContent } from "../StateManagement/ShowLoginData";
 import { slide as Menu } from "react-burger-menu";
+
+// import data from provider
+import { AuthContent } from "../StateManagement/Authorize";
+import { ShowLoginContent } from "../StateManagement/ShowLoginData";
+
+// Import style sheets
+import Style from "../../Assets/scss/Navigation.module.scss";
 import "../../Assets/scss/burger.scss";
 
+// import subcomponent
+import { Login } from "./Login";
+
+// Navigation function component
 export const Navigation = () => {
   const { loginData } = useContext(AuthContent);
   const { ShowLogin, setShowLogin } = useContext(ShowLoginContent);
@@ -29,6 +37,7 @@ export const Navigation = () => {
           <NavLink to="/actors">Skuespillere</NavLink>
         </li>
         <li>
+          {/* Changes between loginbutton and admin pagelink */}
           {loginData.access_token ? (
             <NavLink to="/admin">Min side</NavLink>
           ) : (
@@ -41,6 +50,7 @@ export const Navigation = () => {
   );
 };
 
+// BurgerNav function component for mobile phones
 export const BurgerNav = () => {
   return (
     <nav className={Style.burgerNav}>
