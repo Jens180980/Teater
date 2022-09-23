@@ -24,7 +24,7 @@ export const Admin = () => {
   const { loginData, setLoginData } = useContext(AuthContent);
   const { setShowLogin } = useContext(ShowLoginContent);
   return (
-    <section>
+    <section className={Style.wrapper}>
       <div className={Style.top}>
         <h2>Min side</h2>
         <div>

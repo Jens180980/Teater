@@ -1,0 +1,45 @@
+.wrapper {
+  padding: 1rem;
+  border: 1px solid #ad7a51;
+
+  .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+
+    p {
+      text-transform: uppercase;
+      color: gray;
+    }
+
+    h2 {
+      font-family: "Playfair Display", serif;
+      color: #ad7a51;
+      font-weight: 400;
+      font-size: 3rem;
+    }
+
+    button,
+    a {
+      display: block;
+      border: none;
+      padding: 0.5rem 1rem;
+      background-color: #ad7a51;
+      color: white;
+      font-size: 1rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      transition: all 200ms linear;
+      cursor: pointer;
+    }
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .wrapper {
+    .top {
+      display: block;
+    }
+  }
+}

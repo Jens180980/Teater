@@ -6,6 +6,9 @@ import { AiFillStar } from "react-icons/ai";
 // import data from provider
 import { AuthContent, authHeader } from "../StateManagement/Authorize";
 
+// Import modular style sheet
+import Style from "../../Assets/scss/MyComments.module.scss";
+
 export const MyComments = () => {
   const { loginData } = useContext(AuthContent);
   const [AllComments, setAllComments] = useState();
@@ -30,8 +33,8 @@ export const MyComments = () => {
   };
 
   return (
-    <section>
-      <div>
+    <section className={Style.wrapper}>
+      <div className={Style.top}>
         <AiFillStar />
         <h2>Mine Anmeldelser</h2>
       </div>
