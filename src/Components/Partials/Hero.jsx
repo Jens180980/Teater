@@ -1,15 +1,24 @@
 // import react hooks
-import { useContext, useEffect } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
-
-// import data from provider
-import { EventListContent } from "../StateManagement/EventListData";
 
 // import modular style sheet
 import Style from "../../Assets/scss/Hero.module.scss";
 
 export const Hero = () => {
-  const { EventListData, setEventListData } = useContext(EventListContent);
+  const [EventListData, setEventListData] = useState([]);
+
+  // Get data
+  useEffect(() => {
+    const getData = async () => {
+      const result = await axios.get(
+        `https://api.mediehuset.net/detutroligeteater/events`
+      );
+
+      setEventListData(result.data.items);
+    };
+    getData();
+  }, []);
 
   return (
     <section>

@@ -1,15 +1,25 @@
 // import react hooks
-import { useContext } from "react";
+import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-
-// import data from provider
-import { EventListContent } from "../StateManagement/EventListData";
+import axios from "axios";
 
 // import modular style sheet
 import Style from "../../Assets/scss/FrontGallery.module.scss";
 
 export const FrontGallery = () => {
-  const { EventListData } = useContext(EventListContent);
+  const [EventListData, setEventListData] = useState([]);
+
+  // Get data
+  useEffect(() => {
+    const getData = async () => {
+      const result = await axios.get(
+        `https://api.mediehuset.net/detutroligeteater/events`
+      );
+
+      setEventListData(result.data.items);
+    };
+    getData();
+  }, []);
 
   return (
     <section className={Style.wrapper}>
