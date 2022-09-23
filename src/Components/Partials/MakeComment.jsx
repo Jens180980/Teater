@@ -33,6 +33,7 @@ export const MakeComment = ({ event_id }) => {
       { headers: authHeader() }
     );
     console.log(result);
+    window.location.reload(true);
   };
 
   const ratingChanged = (newRating) => {
@@ -78,7 +79,9 @@ export const MakeComment = ({ event_id }) => {
           </div>
         </form>
       ) : (
-        <p>Du skal være logget ind for at kommentere</p>
+        <p className={Style.noLogin}>
+          Du skal være logget ind for at kommentere
+        </p>
       )}
     </section>
   );
