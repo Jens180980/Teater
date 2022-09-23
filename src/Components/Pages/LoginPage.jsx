@@ -8,10 +8,10 @@ import { useNavigate } from "react-router-dom";
 import { AuthContent } from "../StateManagement/Authorize";
 
 // Import modular style sheets
-import Style from "../../Assets/scss/Login.module.scss";
+import Style from "../../Assets/scss/LoginPage.module.scss";
 
 // Login function component
-export const Login = () => {
+export const LoginPage = () => {
   const {
     register,
     handleSubmit,
@@ -34,9 +34,14 @@ export const Login = () => {
     }
   };
   const navigate = useNavigate();
+  const logOut = () => {
+    sessionStorage.removeItem("token");
+    setLoginData("");
+    navigate("/", { replace: true });
+  };
 
   return (
-    <section className={!loginData ? Style.compWrapper : Style.displayNone}>
+    <section className={Style.wrapper}>
       {!loginData && !loginData.username ? (
         <form onSubmit={handleSubmit(Login)}>
           <div className={Style.topWrap}>
@@ -68,7 +73,12 @@ export const Login = () => {
             <p>Opret ny bruger</p>
           </div>
         </form>
-      ) : null}
+      ) : (
+        <div>
+          <p>Du er logget ind som {loginData.username}</p>
+          <button onClick={logOut}>Log ud</button>
+        </div>
+      )}
     </section>
   );
 }; // End of function component

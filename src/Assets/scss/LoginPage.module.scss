@@ -1,0 +1,50 @@
+.wrapper {
+  background-color: #b08058;
+  padding: 1rem;
+  font-family: "Titillium Web", sans-serif;
+
+  input {
+    padding: 0.5rem;
+  }
+
+  ::placeholder {
+    font-family: "Titillium Web", sans-serif;
+  }
+
+  .topWrap {
+    display: block;
+  }
+  .bottomWrap {
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+
+    button {
+      margin-left: 0.5rem;
+      text-transform: uppercase;
+      outline: none;
+      border: none;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      color: white;
+      background-color: rgb(66, 218, 43);
+      padding: 0.6rem 0.5rem 0.5rem 0.5rem;
+      cursor: pointer;
+    }
+  }
+
+  .bottomInfo {
+    font-size: 0.7rem;
+    display: block;
+    margin-top: 0.5rem;
+
+    p {
+      display: inline;
+      margin-right: 0.5rem;
+      color: rgb(43, 43, 43);
+      border-bottom: 1px solid rgb(43, 43, 43);
+      cursor: pointer;
+    }
+  }
+}

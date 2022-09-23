@@ -9,6 +9,7 @@ import { Purchase, PurchaseDetails } from "../Pages/Purchase";
 import { SearchResult } from "../Pages/SearchResult";
 import { Actors } from "../Pages/Actors";
 import { Admin } from "../Pages/Admin";
+import { LoginPage } from "../Pages/LoginPage";
 
 // AllRoutes function component
 export const AllRoutes = () => {
@@ -26,6 +27,7 @@ export const AllRoutes = () => {
       <Route path="/search" element={<SearchResult />}></Route>
       <Route path="/actors" element={<Actors />}></Route>
       <Route path="/admin" element={<Admin />}></Route>
+      <Route path="/login" element={<LoginPage />}></Route>
     </Routes>
   );
 }; // End of function component
