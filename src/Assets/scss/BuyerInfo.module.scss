@@ -105,3 +105,64 @@
     color: white;
   }
 }
+
+@media only screen and (max-width: 500px) {
+  .outerWrap {
+    display: block !important;
+
+    .imgWrap {
+      width: 100%;
+      overflow: hidden;
+      border: 5px solid #ad7a51;
+
+      img {
+        height: 100%;
+      }
+    }
+    .inputField {
+      input {
+        width: 80vw;
+      }
+    }
+    .line {
+      div {
+        width: 6vw !important;
+        height: 6vw !important;
+        margin-right: 0.5rem;
+        border-radius: 50%;
+        background-color: #b08058 !important;
+        display: inline-block;
+        cursor: not-allowed;
+        transition: all 200ms linear;
+      }
+
+      input {
+        position: absolute;
+        z-index: 10;
+        opacity: 0;
+        height: 6vw;
+        width: 6vw;
+        cursor: pointer;
+      }
+
+      span {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 6vw;
+        width: 6vw;
+        background-color: white;
+        border: 1px solid #b08058;
+        border-radius: 50%;
+      }
+
+      div:hover input ~ span {
+        background-color: lightgray;
+      }
+
+      div input:checked ~ span {
+        background-color: gray !important;
+      }
+    }
+  }
+}
