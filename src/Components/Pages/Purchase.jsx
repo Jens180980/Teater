@@ -2,7 +2,6 @@
 import { useParams } from "react-router-dom";
 
 // Import subcomponents
-import { SeatPicker } from "../Partials/SeatPicker";
 import { BuyerInfo } from "../Partials/BuyerInfo";
 
 export const PurchaseDetails = () => {
@@ -11,7 +10,6 @@ export const PurchaseDetails = () => {
     <div>
       <div>
         <BuyerInfo event_id={event_id} />
-        <SeatPicker event_id={event_id} />
       </div>
     </div>
   );
@@ -22,7 +20,6 @@ export const Purchase = () => {
   return (
     <div>
       <BuyerInfo event_id={event_id} />
-      <SeatPicker event_id={event_id} />
     </div>
   );
 };

@@ -29,6 +29,18 @@ export const BuyerInfo = ({ event_id }) => {
   } = useForm();
 
   const { loginData } = useContext(AuthContent);
+  const [SeatData, setSeatData] = useState();
+
+  useEffect(() => {
+    const getData = async () => {
+      const result = await axios.get(
+        `https://api.mediehuset.net/detutroligeteater/seats/${event_id}`
+      );
+
+      setSeatData(result.data.items);
+    };
+    getData();
+  }, []);
 
   const SubmitBuy = async (data) => {
     const formData = new FormData();
@@ -37,7 +49,10 @@ export const BuyerInfo = ({ event_id }) => {
     formData.append("address", data.address);
     formData.append("zipcode", data.zipcode);
     formData.append("email", data.email);
-    formData.append("seats[]", data.value);
+    data.seats &&
+      data.seats.map((item) => {
+        formData.append("seats[]", item);
+      });
 
     const result = await axios.post(
       "https://api.mediehuset.net/detutroligeteater/reservations",
@@ -45,6 +60,7 @@ export const BuyerInfo = ({ event_id }) => {
       { headers: authHeader() }
     );
     console.log(result);
+    console.log(data.seats);
   };
 
   return (
@@ -93,11 +109,218 @@ export const BuyerInfo = ({ event_id }) => {
               <input
                 type="text"
                 id="zipcode"
-                placeholder="Vejnavn og nr"
+                placeholder="Indtast dit postnummer"
                 {...register("zipcode", { required: true })}
               />
               {errors.zipcode && <span>Udfyld venligst feltet korrekt</span>}
             </div>
+
+            <div className={Style.inputField}>
+              <input
+                type="email"
+                id="email"
+                placeholder="Indtast din email"
+                {...register("email", { required: true })}
+              />
+              {errors.email && <span>Udfyld venligst feltet korrekt</span>}
+            </div>
+
+            {/* SeatPicker begins */}
+
+            <section className={Style.SeatPickerWrapper}>
+              <div className={Style.stage}>Scenen</div>
+              <div className={Style.line}>
+                {SeatData &&
+                  SeatData.map((item) => {
+                    switch (item.line) {
+                      case "1":
+                        return (
+                          <div key={item.id}>
+                            <input
+                              className={
+                                item.is_reserved > 0
+                                  ? Style.thisSeatIsTaken
+                                  : null
+                              }
+                              type="checkbox"
+                              name="seats[]}"
+                              id="seats[]"
+                              value={item.id}
+                              {...register("seats[]", { required: true })}
+                            ></input>
+                            <span
+                              className={
+                                item.is_reserved > 0
+                                  ? Style.thisSeatIsTaken
+                                  : null
+                              }
+                            ></span>
+                          </div>
+                        );
+                    }
+                  })}
+              </div>
+
+              <div className={Style.line}>
+                {SeatData &&
+                  SeatData.map((item) => {
+                    switch (item.line) {
+                      case "2":
+                        return (
+                          <div key={item.id}>
+                            <input
+                              className={
+                                item.is_reserved > 0
+                                  ? Style.thisSeatIsTaken
+                                  : null
+                              }
+                              type="checkbox"
+                              name="seats[]}"
+                              id="seats[]"
+                              value={item.id}
+                              {...register("seats[]", { required: true })}
+                            ></input>
+                            <span
+                              className={
+                                item.is_reserved > 0
+                                  ? Style.thisSeatIsTaken
+                                  : null
+                              }
+                            ></span>
+                          </div>
+                        );
+                    }
+                  })}
+              </div>
+
+              <div className={Style.line}>
+                {SeatData &&
+                  SeatData.map((item) => {
+                    switch (item.line) {
+                      case "3":
+                        return (
+                          <div key={item.id}>
+                            <input
+                              className={
+                                item.is_reserved > 0
+                                  ? Style.thisSeatIsTaken
+                                  : null
+                              }
+                              type="checkbox"
+                              name="seats[]}"
+                              id="seats[]"
+                              value={item.id}
+                              {...register("seats[]", { required: true })}
+                            ></input>
+                            <span
+                              className={
+                                item.is_reserved > 0
+                                  ? Style.thisSeatIsTaken
+                                  : null
+                              }
+                            ></span>
+                          </div>
+                        );
+                    }
+                  })}
+              </div>
+
+              <div className={Style.line}>
+                {SeatData &&
+                  SeatData.map((item) => {
+                    switch (item.line) {
+                      case "4":
+                        return (
+                          <div key={item.id}>
+                            <input
+                              className={
+                                item.is_reserved > 0
+                                  ? Style.thisSeatIsTaken
+                                  : null
+                              }
+                              type="checkbox"
+                              name="seats[]}"
+                              id="seats[]"
+                              value={item.id}
+                              {...register("seats[]", { required: true })}
+                            ></input>
+                            <span
+                              className={
+                                item.is_reserved > 0
+                                  ? Style.thisSeatIsTaken
+                                  : null
+                              }
+                            ></span>
+                          </div>
+                        );
+                    }
+                  })}
+              </div>
+
+              <div className={Style.line}>
+                {SeatData &&
+                  SeatData.map((item) => {
+                    switch (item.line) {
+                      case "5":
+                        return (
+                          <div key={item.id}>
+                            <input
+                              className={
+                                item.is_reserved > 0
+                                  ? Style.thisSeatIsTaken
+                                  : null
+                              }
+                              type="checkbox"
+                              name="seats[]}"
+                              id="seats[]"
+                              value={item.id}
+                              {...register("seats[]", { required: true })}
+                            ></input>
+                            <span
+                              className={
+                                item.is_reserved > 0
+                                  ? Style.thisSeatIsTaken
+                                  : null
+                              }
+                            ></span>
+                          </div>
+                        );
+                    }
+                  })}
+              </div>
+
+              <div className={Style.line}>
+                {SeatData &&
+                  SeatData.map((item) => {
+                    switch (item.line) {
+                      case "6":
+                        return (
+                          <div key={item.id}>
+                            <input
+                              className={
+                                item.is_reserved > 0
+                                  ? Style.thisSeatIsTaken
+                                  : null
+                              }
+                              type="checkbox"
+                              name="seats[]}"
+                              id="seats[]"
+                              value={item.id}
+                              {...register("seats[]", { required: true })}
+                            ></input>
+                            <span
+                              className={
+                                item.is_reserved > 0
+                                  ? Style.thisSeatIsTaken
+                                  : null
+                              }
+                            ></span>
+                          </div>
+                        );
+                    }
+                  })}
+              </div>
+            </section>
 
             <button>Send bestilling</button>
           </form>

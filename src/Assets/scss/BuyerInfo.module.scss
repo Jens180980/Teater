@@ -42,3 +42,66 @@
     cursor: pointer;
   }
 }
+
+.SeatPickerWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .line {
+    position: relative;
+    div {
+      position: relative;
+      width: 2vw !important;
+      height: 2vw !important;
+      margin-right: 0.5rem;
+      border-radius: 50%;
+      background-color: #b08058 !important;
+      display: inline-block;
+      cursor: not-allowed;
+      transition: all 200ms linear;
+    }
+
+    input {
+      position: absolute;
+      z-index: 10;
+      opacity: 0;
+      height: 2vw;
+      width: 2vw;
+      cursor: pointer;
+    }
+
+    span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 2vw;
+      width: 2vw;
+      background-color: white;
+      border: 1px solid #b08058;
+      border-radius: 50%;
+    }
+
+    div:hover input ~ span {
+      background-color: lightgray;
+    }
+
+    div input:checked ~ span {
+      background-color: gray !important;
+    }
+  }
+
+  .thisSeatIsTaken {
+    background-color: #b08058 !important;
+    cursor: not-allowed !important;
+  }
+
+  .stage {
+    margin: 2rem 0;
+    padding: 0.5rem 0;
+    width: 80%;
+    background-color: #ad7a51;
+    text-align: center;
+    color: white;
+  }
+}
