@@ -51,6 +51,9 @@ export const BurgerNav = () => {
         <NavLink id="list" className="menu-item" to="/events">
           Forestillinger
         </NavLink>
+        <NavLink id="actors" className="menu-item" to="/actors">
+          Skuespillere
+        </NavLink>
         <NavLink id="login" className="menu-item" to="/login">
           Login
         </NavLink>
